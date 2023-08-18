@@ -41,7 +41,7 @@ let getJSONData = function (url) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  let usuarioCargado = localStorage.getItem("sesion");
+  let usuarioCargado = sessionStorage.getItem("sesion");
   if (!usuarioCargado) {
     Swal.fire({
       title: 'No has Iniciado Sesion',
