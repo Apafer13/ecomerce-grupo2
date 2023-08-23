@@ -1,9 +1,15 @@
 const URL_Autos = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
-function showData(Array) {
+function showData(data) {
     let auto = document.getElementById("cat-list-container");
     let htmlContentToAppend = "";
+    let Array=data.products;
+    let idCategoria=localStorage.getItem("catID")
+
+    if(data.catID==idCategoria) {
+      
     for (const item of Array) {
+
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action cursor-active">
             <div class="row">
@@ -22,7 +28,8 @@ function showData(Array) {
         auto.innerHTML = htmlContentToAppend;
     }
 }
-
+}
 fetch(URL_Autos)
     .then(response => response.json())
-    .then(data => showData(data.products))
+    .then(data => showData(data))
+    
