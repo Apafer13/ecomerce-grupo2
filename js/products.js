@@ -10,7 +10,12 @@ let precioMin = document.getElementById("rangeFilterCountMin");
 let precioMax = document.getElementById("rangeFilterCountMax");
 let arreglo = [];
 
-
+function namesCat(Array){
+    let nombre = document.getElementById("nombreCat");
+    let htmlContentToAppend = "";
+    htmlContentToAppend += Array.catName
+    nombre.innerHTML += htmlContentToAppend;
+}
 function showData(Array) {
     let htmlContentToAppend = "";
     for (const item of Array) {
@@ -92,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(result => {
             if (result.status === "ok") {
                 arreglo = result.data.products;
+                namesCat(result.data);
                 showData(arreglo);
             } else {
                 console.error(result.data);
