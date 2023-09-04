@@ -1,4 +1,4 @@
-let idCat = localStorage.getItem("catID") 
+let idCat = localStorage.getItem("catID")
 const URL_PRODUCTOS = `https://japceibal.github.io/emercado-api/cats_products/${idCat}.json`
 let contenedor = document.getElementById("cat-list-container");
 let botonFiltrar = document.getElementById("rangeFilterCount");
@@ -10,12 +10,23 @@ let precioMin = document.getElementById("rangeFilterCountMin");
 let precioMax = document.getElementById("rangeFilterCountMax");
 let arreglo = [];
 
+function namesCat(Array) {
+    let nombre = document.getElementById("nombreCat");
+    let htmlContentToAppend = "";
+    htmlContentToAppend += Array.catName
+    nombre.innerHTML += htmlContentToAppend;
+}
+
+function setProdID(id) {
+    localStorage.setItem("ProdID", id);
+    window.location = "product-info.html"
+}
 
 function showData(Array) {
     let htmlContentToAppend = "";
     for (const item of Array) {
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action cursor-active">
+        <div onclick="setProdID(${item.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="row">
             <div class="col-3">
                 <img src="${item.image}" class="img-thumbnail">
@@ -83,8 +94,8 @@ botonLimpiar.addEventListener("click", function () {
     precioMin.value = "";
 });
 let buscador = document.getElementById("filtrado")
-buscador.addEventListener('input', function() {
-    let arregloFiltrado = arreglo.filter(producto => producto.name.toLowerCase().includes(buscador.value.toLowerCase())||producto.description.toLowerCase().includes(buscador.value.toLowerCase()) );
+buscador.addEventListener('input', function () {
+    let arregloFiltrado = arreglo.filter(producto => producto.name.toLowerCase().includes(buscador.value.toLowerCase()) || producto.description.toLowerCase().includes(buscador.value.toLowerCase()));
     showData(arregloFiltrado);
 })
 document.addEventListener("DOMContentLoaded", function () {
@@ -92,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(result => {
             if (result.status === "ok") {
                 arreglo = result.data.products;
+                namesCat(result.data);
                 showData(arreglo);
             } else {
                 console.error(result.data);
