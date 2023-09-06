@@ -271,4 +271,40 @@ a.custom-card:hover {
   font-size: 1rem;
   transition: color 0.2s;
 }
+#comment-form label {
+  font-weight: bold;
+}
 
+#comment {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#rating {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #6f9fd1;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3987db;
+
+}
+
+button[type="submit"]:hover{
+  background-color: #2a90e4;
+}
