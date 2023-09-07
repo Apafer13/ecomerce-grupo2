@@ -5,6 +5,7 @@ let emptyStar = `<i class="fa-regular fa-star" style="color: #000000;"></i>`
 function hora(){
 
     const fechaHoraActual = new Date();
+
     const año = fechaHoraActual.getFullYear();
     const mes = String(fechaHoraActual.getMonth() + 1).padStart(2, '0');
     const dia = String(fechaHoraActual.getDate()).padStart(2, '0');
