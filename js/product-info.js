@@ -1,7 +1,7 @@
 let ProdID = localStorage.getItem("ProdID");
 PRODUCTS_COMMENTS = `https://japceibal.github.io/emercado-api/products_comments/${ProdID}.json`;
-let filledStar = `<i class="fa-solid fa-star" style="color: #fff947;"></i>`
-let emptyStar = `<i class="fa-regular fa-star" style="color: #000000;"></i>`
+let filledStar = `<i class="fas fa-star" style="color: #fff947;"></i>`
+let emptyStar = `<i class="far fa-star" style="color: #000000;"></i>`
 function hora(){
 
     const fechaHoraActual = new Date();
