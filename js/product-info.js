@@ -60,8 +60,6 @@ btnSend.addEventListener("click", function(){
 })
 
 
-var options = {  year: 'numeric', month: 'numeric', day: 'numeric' };
-options.timeZone = 'GMT-3';
 
 
 document.addEventListener("DOMContentLoaded", function () {
