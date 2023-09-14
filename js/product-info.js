@@ -56,7 +56,7 @@ btnSend.addEventListener("click", function(){
     addData(info)
     comment.value = ""
     score.value = 1
-   
+    
 })
 
 
