@@ -307,3 +307,29 @@ a.custom-card:hover {
 #btnSend:focus {
   outline: none;
 }
+
+.estiloimg {
+  display: flex;
+  justify-content: center;
+  flex-wrap:initial;
+}
+
+
+.estiloimg img {
+width: 25%;
+padding: 10px;
+}
+
+#infoProducto h2 {
+margin-top: 20px;
+}
+
+#comment-form {
+  margin-top: 20px;
+}
+
+#contenedor {
+  margin-top: 75px;
+}
+
+
