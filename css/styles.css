@@ -291,7 +291,7 @@ a.custom-card:hover {
   border-radius: 5px;
 }
 
-button[type="submit"] {
+#btnSend {
   background-color: #6f9fd1;
   color: #fff;
   padding: 5px 10px;
@@ -300,11 +300,36 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
+#btnSend:hover {
   background-color: #3987db;
-
 }
 
-button[type="submit"]:hover{
-  background-color: #2a90e4;
+#btnSend:focus {
+  outline: none;
 }
+
+.estiloimg {
+  display: flex;
+  justify-content: center;
+  flex-wrap:initial;
+}
+
+
+.estiloimg img {
+width: 25%;
+padding: 10px;
+}
+
+#infoProducto h2 {
+margin-top: 20px;
+}
+
+#comment-form {
+  margin-top: 20px;
+}
+
+#contenedor {
+  margin-top: 75px;
+}
+
+
