@@ -2,7 +2,7 @@ let ProdID = localStorage.getItem("ProdID");
 let divProducto = document.getElementById("infoProducto");
 PRODUCTS_COMMENTS = `https://japceibal.github.io/emercado-api/products_comments/${ProdID}.json`;
 let URL_PRODUCTO = `https://japceibal.github.io/emercado-api/products/${ProdID}.json`;
-let filledStar = `<i class="fas fa-star" style="color: #fff947;"></i>`
+let filledStar = `<i class="fas fa-star" style="color: rgb(218, 165, 32)"></i>`
 let emptyStar = `<i class="far fa-star" style="color: #000000;"></i>`
 function hora(){
 
