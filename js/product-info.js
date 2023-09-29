@@ -68,28 +68,50 @@ document.addEventListener("DOMContentLoaded", function () {
         let htmlContentToAppend = "";
 
         htmlContentToAppend += `
-                    <h2>${data.name}</h2>
-                    <hr>
-                    <h4>Precio</h4>
-                    <p>${data.currency} ${data.cost}</p>
-                    <br>
-                    <h4>Descripción</h4>
-                    <p>${data.description}</p>
-                    <br>
-                    <h4>Categoría</h4>
-                    <p>${data.category}</p>
-                    <br>
-                    <h4>Cantidad de vendidos</h4>
-                    <p>${data.soldCount}</p>
-                    <br>
-                    <h4>Imágenes ilustrativas</h4>
-                    <div class="estiloimg">
-                    `
-                  for (let i of data.images) {
-                    htmlContentToAppend += 
-                    `<img src="${i}" class="img-thumbnail">`
-                   }
-                   htmlContentToAppend += `</div>`
+          <div class="presentation">
+            <div class="text">
+                <h2>${data.name}</h2>
+                <hr>
+                <h4>Precio</h4>
+                <p>${data.currency} ${data.cost}</p>
+                <br>
+                <h4>Descripción</h4>
+                <p>${data.description}</p>
+                <br>
+                <h4>Categoría</h4>
+                <p>${data.category}</p>
+                <br>
+                <h4>Cantidad de vendidos</h4>
+                <p>${data.soldCount}</p>
+            </div>
+            <br>
+            <div class="imagenes">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="${data.images[0]}" class="d-block w-100">
+                        </div>`;
+
+                    for (let i=1; i < data.images.length; i++) {
+                      htmlContentToAppend += 
+                        `<div class="carousel-item">
+                        <img src="${data.images[i]}" class="d-block w-100">
+                        </div>`;
+                    }
+
+        htmlContentToAppend += 
+                `</div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+            </div>
+          </div>`;
 
         divProducto.innerHTML = htmlContentToAppend;
 
