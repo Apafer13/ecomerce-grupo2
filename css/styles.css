@@ -265,4 +265,114 @@ a.custom-card:hover {
   font-size: 20px;
 }
 
+#username{
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+#comment-form label {
+  font-weight: bold;
+}
 
+#comment {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#rating {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#btnSend {
+  background-color: #6f9fd1;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btnSend:hover {
+  background-color: #3987db;
+}
+
+#btnSend:focus {
+  outline: none;
+}
+
+.estiloimg {
+  display: flex;
+  justify-content: center;
+  flex-wrap:initial;
+}
+
+
+.estiloimg img {
+width: 25%;
+padding: 10px;
+}
+
+#infoProducto h2 {
+margin-top: 20px;
+}
+
+#comment-form {
+  margin-top: 20px;
+}
+
+#contenedor {
+  margin-top: 75px;
+}
+
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+  background-color: #070605; /* Cambia color de fondo */
+  color: #ffffff; /* Cambia color de texto */
+  transition: .5s ease-in-out;
+}
+
+/* Personalizar otros estilos según necesidades */
+.dark-mode .navbar {
+  background-color: #333;
+}
+
+body, .darkmodez, .jumbotron, .bg-light, .mainimgs {
+  transition: .5s ease-in-out; /* Ajustar duración y temporización según mis preferencias */
+}
+
+body.dark-mode .darkmodez {
+  background-color: #252525;
+color: #eeeeee;
+}
+
+.img-thumbnail {
+  border-color: #1a1a1a; 
+}
+
+body.dark-mode .jumbotron {
+  background-image: url(../img/dark\ cover_back.jpg);
+}
+
+body.dark-mode .bg-light {
+  background-color: #070605;
+  color: #eeeeee; 
+}
+
+body.dark-mode .album {
+  background-color: #070605 !important;
+  color: #eeeeee; 
+}
+
+body.dark-mode .mainimgs {
+  background-color: #070605;
+  color: #eeeeee; 
+}
