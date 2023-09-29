@@ -24,6 +24,7 @@
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
           </li>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
           </li>
@@ -31,8 +32,14 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <span id="username" class = "nav-link"></span>
           </li>
         </ul>
+      </div>
+      <div class="dropdown" data-bs-theme="dark">
+        <button class="btn btn-secondary" type="button" id="dropdownMenuButtonDark">
+          Día/Noche
+        </button>        
       </div>
     </div>
   </nav>
@@ -41,7 +48,7 @@
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 mainimgs">
             <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
               <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
                 alt="Imgagen representativa de la categoría 'Autos'">
@@ -51,7 +58,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mainimgs">
             <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
               <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
                 alt="Imgagen representativa de la categoría 'Juguetes'">
@@ -61,7 +68,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mainimgs">
             <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
               <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
                 alt="Imgagen representativa de la categoría 'Muebles'">
@@ -89,6 +96,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
+
 </body>
 
 </html>

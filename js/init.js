@@ -41,8 +41,12 @@ let getJSONData = function (url) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  let usuarioCargado = localStorage.getItem("sesion");
-  if (!usuarioCargado) {
+  let usuarioCargado = JSON.parse(sessionStorage.getItem("sesion"));
+  let usernameElement = document.getElementById('username');
+
+  if (usuarioCargado) {
+    usernameElement.textContent = `Hola, ${usuarioCargado.usuario}`;
+  } else {
     Swal.fire({
       title: 'No has Iniciado Sesion',
       text: "Es mejor que inicies sesion para continuar",
@@ -58,4 +62,24 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
   }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtén el botón "Modo oscuro" por su ID
+  const darkModeButton = document.getElementById("dropdownMenuButtonDark");
+
+  // Escucha el evento clic en el botón "Modo oscuro"
+  darkModeButton.addEventListener("click", function () {
+    // Obtén el elemento <body> para cambiar sus clases
+    const body = document.body;
+
+    // Verifica si el cuerpo tiene la clase "dark-mode"
+    const isDarkMode = body.classList.contains("dark-mode");
+    // Si está en modo oscuro, quítale la clase, de lo contrario, agrégala
+    if (isDarkMode) {
+      body.classList.remove("dark-mode");
+    } else {
+      body.classList.add("dark-mode")
+    }
+  });
 });
