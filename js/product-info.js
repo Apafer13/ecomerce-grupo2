@@ -3,8 +3,9 @@ let divProducto = document.getElementById("infoProducto");
 PRODUCTS_COMMENTS = `https://japceibal.github.io/emercado-api/products_comments/${ProdID}.json`;
 let URL_PRODUCTO = `https://japceibal.github.io/emercado-api/products/${ProdID}.json`;
 let filledStar = `<i class="fas fa-star" style="color: rgb(218, 165, 32)"></i>`
-let emptyStar = `<i class="far fa-star" style="color: #000000;"></i>`
+let emptyStar = `<i class="far fa-star" style="color: #000000;"></i>`;
 let divRelacionados = document.getElementById("relacionados");
+
 function hora() {
 
     const fechaHoraActual = new Date();
@@ -49,6 +50,7 @@ function showComments(Array) {
     }
 
 }
+
 function setProdID(id) {
     localStorage.setItem("ProdID", id);
     window.location = "product-info.html"
