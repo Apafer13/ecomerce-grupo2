@@ -309,31 +309,6 @@ a.custom-card:hover {
   outline: none;
 }
 
-.estiloimg {
-  display: flex;
-  justify-content: center;
-  flex-wrap: initial;
-}
-
-
-.estiloimg img {
-  width: 25%;
-  padding: 10px;
-}
-
-.imgRel {
-  display: flex;
-}
-
-.divRel {
-  border: 1px;
-}
-
-.divRel img {
-  padding: 10px;
-  width: 30%;
-}
-
 #infoProducto h2 {
   margin-top: 20px;
 }
@@ -344,4 +319,35 @@ a.custom-card:hover {
 
 #contenedor {
   margin-top: 75px;
+}
+
+.presentation {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  flex: 1;
+  padding-right: 10px;
+}
+
+
+.imagenes {
+  padding-top: 100px;
+  flex: 1.5;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(8, 8, 8, 0.562);
+  filter: drop-shadow(2px 2px 2px rgba(0, 5, 0, 5, 0, 0.5));
+}
+
+.imgRel {
+  display: flex;
+  width: 50%;
+}
+
+.divRel img {
+  width: 70%;
 }
