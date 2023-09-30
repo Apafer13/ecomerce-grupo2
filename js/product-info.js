@@ -48,7 +48,6 @@ function showComments(Array) {
     for (const comment of Array) {
         addData(comment)
     }
-
 }
 
 function setProdID(id) {
@@ -81,7 +80,6 @@ btnSend.addEventListener("click", function () {
     addData(info)
     comment.value = ""
     score.value = 1
-
 })
 
 document.addEventListener("DOMContentLoaded", function () {
