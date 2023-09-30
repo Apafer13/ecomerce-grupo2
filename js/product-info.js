@@ -60,7 +60,7 @@ function mostrarRelacionados(Array) {
 
     for (const item of Array) {
         htmlContentToAppend += `
-        <div class="divRel" onclick="setProdID(${item.id})">
+        <div class="divRel cursor-active" onclick="setProdID(${item.id})">
             <img src="${item.image}" ><br>
             <p>${item.name}</p>
         </div>
