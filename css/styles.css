@@ -330,7 +330,36 @@ margin-top: 20px;
 #contenedor {
   margin-top: 75px;
 }
+.presentation {
+  display: flex;
+  align-items: center;
+}
 
+.text {
+  flex: 1;
+  padding-right: 10px;
+}
+
+
+.imagenes {
+  padding-top: 100px;
+  flex: 1.5;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(8, 8, 8, 0.562);
+  filter: drop-shadow(2px 2px 2px rgba(0, 5, 0, 5, 0, 0.5));
+}
+
+.imgRel {
+  display: flex;
+  width: 50%;
+}
+
+.divRel img {
+  width: 70%;
+}
 /* Estilos para el modo oscuro */
 .dark-mode {
   background-color: #070605; /* Cambia color de fondo */
