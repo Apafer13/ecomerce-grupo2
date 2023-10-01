@@ -33,7 +33,7 @@ nav a {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
+  background-color: #0083c9;
   background: url('../img/cover_back.png');
   background-size: cover;
   background-position: center;
@@ -309,6 +309,17 @@ a.custom-card:hover {
   outline: none;
 }
 
+.estiloimg {
+  display: flex;
+  justify-content: center;
+  flex-wrap:initial;
+}
+
+.estiloimg img {
+width: 25%;
+padding: 10px;
+}
+
 #infoProducto h2 {
 margin-top: 20px;
 }
@@ -321,25 +332,34 @@ margin-top: 20px;
   margin-top: 75px;
 }
 
-.presentation {
-  display: flex;
-  align-items: center;
-}
-
 .text {
   flex: 1;
   padding-right: 10px;
 }
 
+.presentation {
+  display: flex;
+  align-items: center;
+}
 
 .imagenes {
   padding-top: 100px;
   flex: 1.5;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   background-color: rgba(8, 8, 8, 0.562);
-  filter: drop-shadow(2px 2px 2px rgba(0,5, 0,5, 0, 0.5)); 
+  filter: drop-shadow(2px 2px 2px rgba(0, 5, 0, 5, 0, 0.5));
+}
+
+.imgRel {
+  display: flex;
+  width: 50%;
+}
+
+.divRel img {
+  width: 70%;
 }
 /* Estilos para el modo oscuro */
 .dark-mode {
@@ -434,6 +454,7 @@ input:checked + .slider {
   background-color: #011321;
 }
 
+/* Fondo del botón switch */
 input:focus + .slider {
   box-shadow: 0 0 1px #00060b;
 }
@@ -448,4 +469,3 @@ input:checked + .slider:before {
 #modeLabel {
   margin-left: 10px;
 }
-
