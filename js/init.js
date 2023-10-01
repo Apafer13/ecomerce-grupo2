@@ -74,10 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const isDarkMode = body.classList.contains("dark-mode");
     if (isDarkMode) {
       body.classList.remove("dark-mode");
-      localStorage.setItem("claseBody", "light"); // Guardo el estado "light" en el Local Storage
+      localStorage.setItem("claseBody", "light"); // Guardo el modo "light" en el Local Storage
     } else {
       body.classList.add("dark-mode");
-      localStorage.setItem("claseBody", "dark"); // Guardo el estado "dark" en el Local Storage
+      localStorage.setItem("claseBody", "dark"); // Guardo el modo "dark" en el Local Storage
     }
   }
 
