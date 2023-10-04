@@ -300,9 +300,6 @@ a.custom-card:hover {
   cursor: pointer;
 }
 
-#btnSend:hover {
-  background-color: #3987db;
-}
 
 #btnSend:focus {
   outline: none;
