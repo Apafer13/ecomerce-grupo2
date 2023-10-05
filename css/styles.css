@@ -395,15 +395,26 @@ body.dark-mode .bg-light {
   color: #eeeeee; 
 }
 
-body.dark-mode .album {
+body.dark-mode .album, body.dark-mode .commentcontain * {
   background-color: #070605 !important;
   color: #eeeeee; 
 }
 
-body.dark-mode .mainimgs .card {
+body.dark-mode .mainimgs,
+body.dark-mode .card,
+body.dark-mode #cat-list-container * {
   background-color: #070605 !important;
   color: #eeeeee; 
 }
+
+body.dark-mode .categoryarray, .commentcontain > div{
+  border: 1px grey solid;
+  margin: 2px;
+}
+
+body.dark-mode .sectionsarray, .productsArray{
+  border: 1px grey solid;
+} 
 
 .switch-container {
   display: flex;
@@ -469,3 +480,24 @@ input:checked + .slider:before {
 #modeLabel {
   margin-left: 10px;
 }
+
+#dropdownMenuButton1, #muchomasbtn, #username, #sellbtn, #btnSend {
+ background: rgba(255, 158, 12);
+ color: rgb(25, 25, 25);
+}
+
+#tableCart {
+  border-collapse: collapse; 
+  width: 100%; 
+}
+
+#tableCart img {
+  width: 70px; 
+  vertical-align: middle;
+}
+
+.dark-mode #tableCart{
+  color: white;
+}
+
+
