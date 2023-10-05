@@ -484,3 +484,19 @@ input:checked + .slider:before {
  background: rgba(255, 158, 12);
  color: rgb(25, 25, 25);
 }
+
+#tableCart {
+  border-collapse: collapse; 
+  width: 100%; 
+}
+
+#tableCart img {
+  width: 70px; 
+  vertical-align: middle;
+}
+
+.dark-mode #tableCart{
+  color: white;
+}
+
+
