@@ -9,13 +9,15 @@ getJSONData(url)
         console.error(result.data);
     }
 });
-
-  
-
-
 })
 
-
+function modificar(data) {
+    let subtotalProducto = document.getElementById('subtotalProducto');
+    let cant = document.getElementById('cantidad');
+    let cantidad = parseInt(cant.value);
+    let subtotal = parseInt(cantidad * data);
+    subtotalProducto.innerHTML = `${subtotal}`;
+}
 
 function ShowCartData(data){
     let cart = document.getElementById('infoCart')
@@ -36,8 +38,8 @@ function ShowCartData(data){
                     <td><img class="img-fluid" src="${data.image}" alt=""></td>
                     <td class="align-middle">${data.name}</td>
                     <td class="align-middle">${data.currency} ${data.unitCost}</td>
-                    <td class="align-middle"><input type="number" value="${data.count}" class="w-25 text-center"></td>
-                    <td class="align-middle"><b>${data.unitCost}</b></td>
+                    <td class="align-middle"><input type="number" value="${data.count}" class="w-25 text-center" min="0" id="cantidad" onchange="modificar(${data.unitCost})"></td>
+                    <td class="align-middle"><b>${data.currency}&nbsp;</b><b id="subtotalProducto">${data.unitCost}</b></td>
                 </tr>
             </tbody>
         </table>`
