@@ -33,13 +33,23 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="username" class = "nav-link"></span>
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="username" class="nav-link"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
                 <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                 <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+                <li>
+                  <div class="switch-container justify-content-center">
+                    <label class="switch">
+                      <input type="checkbox" id="darkModeSwitch">
+                      <span class="slider round"></span>
+                    </label>
+                    <span id="modeLabel"></span>
+                  </div>
+                </li>
               </ul>
             </div>
           </li>
@@ -49,8 +59,26 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <br>
+      <h1 class="text-center">Carrito de compras</h1>
+      <br>
+      <h3>Articulos a comprar</h3>
+      <br>
+      <div>
+        <table class="table" id="tableCart">
+          <thead>
+            <tr>
+              <th scope="col" class="col-sm-1"></th>
+              <th scope="col" class="col-sm-1">Nombre</th>
+              <th scope="col" class="col-sm-1">Costo</th>
+              <th scope="col" class="col-sm-1">Cantidad</th>
+              <th scope="col" class="col-sm-1">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="infoCart">
+
+          </tbody>
+        </table>
       </div>
     </div>
   </main>
@@ -59,7 +87,8 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <div id="spinner-wrapper">
