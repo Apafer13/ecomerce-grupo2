@@ -62,7 +62,6 @@ function completarCarro() {
     }
     cart.innerHTML += htmlContentToAppend;
 }
-=======
 document.addEventListener("DOMContentLoaded", ()=>{
 const url = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
 getJSONData(url)
