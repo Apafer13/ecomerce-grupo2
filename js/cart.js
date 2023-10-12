@@ -1,6 +1,7 @@
-let cart = document.getElementById('infoCart')
+let cart = document.getElementById('infoCart');
+
 document.addEventListener("DOMContentLoaded", () => {
-    const url = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
+    const url = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
     getJSONData(url)
         .then(result => {
             if (result.status === "ok") {
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error(result.data);
             }
         });
-})
+});
 
 function modificar(data) {
     let subtotalProducto = document.getElementById('subtotalProducto');
@@ -21,33 +22,35 @@ function modificar(data) {
 }
 
 function recalcular() {
-    let cantidad = document.getElementsByClassName("cantidad")
-    let costo = document.getElementsByClassName("costo")
-    let subTotal = document.getElementsByClassName("subtotal")
+    let cantidad = document.getElementsByClassName("cantidad");
+    let costo = document.getElementsByClassName("costo");
+    let subTotal = document.getElementsByClassName("subtotal");
 
     for (let i = 0; i < cantidad.length; i++) {
-
-        subTotal[i].innerHTML = (cantidad[i].value) * (costo[i].value);
+        let cantidadValor = parseInt(cantidad[i].value);
+        let costoValor = parseFloat(costo[i].textContent);
+        let subtotal = cantidadValor * costoValor;
+        subTotal[i].textContent = subtotal;
     }
 }
 
-function ShowCartData(data) {
 
-    let htmlContentToAppend = ""
+function ShowCartData(data) {
+    let htmlContentToAppend = "";
     htmlContentToAppend += `<tr>   
                     <td><img class="img-fluid" src="${data.image}" alt=""></td>
                     <td class="align-middle">${data.name}</td>
                     <td class="align-middle">${data.currency} ${data.unitCost}</td>
                     <td class="align-middle"><input type="number" value="${data.count}" class="w-25 text-center" min="1" id="cantidad" onchange="modificar(${data.unitCost})"></td>
                     <td class="align-middle"><b>${data.currency}&nbsp;</b><b id="subtotalProducto">${data.unitCost}</b></td>
-                    </tr>
-                `
-    cart.innerHTML = htmlContentToAppend
+                    </tr>`;
+    cart.innerHTML = htmlContentToAppend;
 }
 
 function completarCarro() {
     let carrito = JSON.parse(localStorage.getItem("Carrito"));
-    let htmlContentToAppend = ""
+    let htmlContentToAppend = "";
+
     for (let producto of carrito) {
         htmlContentToAppend += `<tr>   
         <td><img class="img-fluid" src="${producto.image}" alt=""></td>
@@ -55,8 +58,7 @@ function completarCarro() {
         <td class="align-middle">${producto.currency} <span class="costo">${producto.unitCost}</span></td>
         <td class="align-middle"><input type="number" value="${producto.count}" class="w-25 text-center cantidad" min="1"  onchange="recalcular()"></td>
         <td class="align-middle"><b>${producto.currency}&nbsp;</b><b> <span class="subtotal">${producto.unitCost}</span></b></td>
-        </tr>
-    `
+        </tr>`;
     }
-    cart.innerHTML += htmlContentToAppend
+    cart.innerHTML += htmlContentToAppend;
 }
