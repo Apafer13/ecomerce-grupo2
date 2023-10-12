@@ -58,27 +58,6 @@ function setProdID(id) {
 
 let carrito = [];
 
-/*function agregarAlCarro() {
-    fetch(URL_PRODUCTO)
-        .then(response => response.json())
-        .then(data => {
-            let carrito = localStorage.getItem("Carrito");
-
-            // Verificar si carrito es null o no existe en localStorage
-            if (carrito === null) {
-                carrito = [];
-            } else {
-                carrito = JSON.parse(carrito); // Convierte la cadena JSON almacenada en un array
-            }
-
-            let producto = { id: data.id, name: data.name, count: 1, unitCost: data.cost, currency: data.currency, image: data.images[0] };
-            carrito.push(producto);
-
-            // Almacenar el carrito actualizado en localStorage
-            localStorage.setItem("Carrito", JSON.stringify(carrito));
-        })
-}*/
-
 function mostrarRelacionados(Array) {
     let htmlContentToAppend = "";
 

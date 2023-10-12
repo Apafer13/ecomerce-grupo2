@@ -13,6 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+
+/*const shippingTypeSelect = document.getElementById("shippingType");
+const streetInput = document.getElementById("street");
+const numberInput = document.getElementById("number");
+const cornerInput = document.getElementById("corner");
+const confirmButton = document.getElementById("confirmButton");
+
+confirmButton.addEventListener("click", confirmShipping);
+
+function confirmShipping() {
+    const selectedShippingType = shippingTypeSelect.value;
+    const selectedStreet = streetInput.value;
+    const selectedNumber = numberInput.value;
+    const selectedCorner = cornerInput.value;
+
+
+}*/
+
 function modificar(data) {
     let subtotalProducto = document.getElementById('subtotalProducto');
     let cant = document.getElementById('cantidad');
@@ -47,6 +65,8 @@ function ShowCartData(data) {
     cart.innerHTML = htmlContentToAppend;
 }
 
+
+
 function completarCarro() {
     let carrito = JSON.parse(localStorage.getItem("Carrito"));
     let htmlContentToAppend = "";
@@ -62,3 +82,25 @@ function completarCarro() {
     }
     cart.innerHTML += htmlContentToAppend;
 }
+
+
+/*let shippingHtml = `
+            <label for="shippingType">Tipo de Envío:</label>
+            <select id="shippingType" name="shippingType">
+              <option value="premium">Premium 2 a 5 días (15%)</option>
+              <option value="express">Express 5 a 8 días (7%)</option>
+              <option value="standard">Standard 12 a 15 días (5%)</option>
+            </select>
+         
+            <label for="street">Calle:</label>
+            <input type="text" id="street" name="street" required>
+         
+            <label for="number">Número:</label>
+            <input type="text" id="number" name="number" required>
+         
+            <label for="corner">Esquina:</label>
+            <input type="text" id="corner" name="corner">
+         
+            <button id="confirmButton">Confirmar Envío</button>`;
+
+cart.innerHTML += shippingHtml;*/
