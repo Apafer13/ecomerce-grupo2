@@ -33,9 +33,11 @@ function addData(info) {
     <div class="list-group-item list-group-item-action cursor-active">
     <div class="row">
         <div class="col">
-            <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1"> ${info.user} ${starsHtml}</h4>
-                <small class="text-muted">${info.dateTime}</small>
+            <div class=" w-100 d-flex justify-content-between">
+            <h4 class="mb-1"> ${info.user}</h4>
+            <small class="text-muted">${info.dateTime}</small>
+            </div>
+            <div class="stars">${starsHtml}</div>
             </div>
             <br>
             <p class="mb-1">${info.description}</p>
@@ -151,3 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 })
+
