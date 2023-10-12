@@ -271,6 +271,7 @@ a.custom-card:hover {
   font-size: 1rem;
   transition: color 0.2s;
 }
+
 #comment-form label {
   font-weight: bold;
 }
@@ -317,6 +318,7 @@ a.custom-card:hover {
 .estiloimg img {
 width: 25%;
 padding: 10px;
+>>>>>>> main
 }
 
 #infoProducto h2 {
@@ -334,12 +336,15 @@ margin-top: 20px;
   display: flex;
   align-items: center;
 }
-
 .text {
   flex: 1;
   padding-right: 10px;
 }
 
+.presentation {
+  display: flex;
+  align-items: center;
+}
 
 .imagenes {
   padding-top: 100px;
@@ -371,7 +376,6 @@ margin-top: 20px;
 .dark-mode .navbar {
   background-color: #333;
 }
-
 body, .darkmodez, .jumbotron, .bg-light, .mainimgs {
   transition: .5s ease-in-out; /* Ajustar duración y temporización según mis preferencias */
 }
@@ -383,6 +387,7 @@ color: #eeeeee;
 
 .img-thumbnail {
   border-color: #1a1a1a; 
+>>>>>>> main
 }
 
 body.dark-mode .jumbotron {
@@ -410,7 +415,6 @@ body.dark-mode .categoryarray, .commentcontain > div{
   border: 1px grey solid;
   margin: 2px;
 }
-
 body.dark-mode .sectionsarray, .productsArray{
   border: 1px grey solid;
 } 
@@ -470,6 +474,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
+>>>>>>> main
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -496,6 +501,7 @@ input:checked + .slider:before {
 }
 
 .dark-mode #tableCart{
+>>>>>>> main
   color: white;
 }
 
