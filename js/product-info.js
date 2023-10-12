@@ -58,6 +58,7 @@ function setProdID(id) {
 
 let carrito = [];
 
+
 function mostrarRelacionados(Array) {
     let htmlContentToAppend = "";
 

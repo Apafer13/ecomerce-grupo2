@@ -265,7 +265,7 @@ a.custom-card:hover {
   font-size: 20px;
 }
 
-#username {
+#username{
   color: white;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -321,7 +321,7 @@ a.custom-card:hover {
 }
 
 #infoProducto h2 {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 #comment-form {
@@ -331,12 +331,10 @@ a.custom-card:hover {
 #contenedor {
   margin-top: 75px;
 }
-
 .presentation {
   display: flex;
   align-items: center;
 }
-
 .text {
   flex: 1;
   padding-right: 10px;
@@ -366,7 +364,6 @@ a.custom-card:hover {
 .divRel img {
   width: 70%;
 }
-
 /* Estilos para el modo oscuro */
 .dark-mode {
   background-color: #070605;
@@ -380,7 +377,6 @@ a.custom-card:hover {
 .dark-mode .navbar {
   background-color: #333;
 }
-
 body,
 .darkmodez,
 .jumbotron,
@@ -397,6 +393,11 @@ body.dark-mode .darkmodez {
 
 .img-thumbnail {
   border-color: #1a1a1a;
+color: #eeeeee;
+}
+
+.img-thumbnail {
+  border-color: #1a1a1a; 
 }
 
 body.dark-mode .jumbotron {
@@ -526,6 +527,7 @@ input:checked+.slider:before {
 }
 
 #envio {
+
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;

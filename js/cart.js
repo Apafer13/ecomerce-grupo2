@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
-
 /*const shippingTypeSelect = document.getElementById("shippingType");
 const streetInput = document.getElementById("street");
 const numberInput = document.getElementById("number");
@@ -30,7 +29,6 @@ function confirmShipping() {
 
 
 }*/
-
 function modificar(data) {
     let subtotalProducto = document.getElementById('subtotalProducto');
     let cant = document.getElementById('cantidad');
@@ -67,6 +65,8 @@ function ShowCartData(data) {
 
 
 
+
+
 function completarCarro() {
     let carrito = JSON.parse(localStorage.getItem("Carrito"));
     let htmlContentToAppend = "";
@@ -84,7 +84,9 @@ function completarCarro() {
 }
 
 
+
 /*let shippingHtml = `
+
             <label for="shippingType">Tipo de Envío:</label>
             <select id="shippingType" name="shippingType">
               <option value="premium">Premium 2 a 5 días (15%)</option>
@@ -103,4 +105,6 @@ function completarCarro() {
          
             <button id="confirmButton">Confirmar Envío</button>`;
 
+
 cart.innerHTML += shippingHtml;*/
+
