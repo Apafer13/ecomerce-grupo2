@@ -499,4 +499,7 @@ input:checked + .slider:before {
   color: white;
 }
 
-
+#addCart {
+  margin-top: 50px;
+  float: right;
+}
