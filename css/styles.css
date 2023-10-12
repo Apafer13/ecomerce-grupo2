@@ -590,3 +590,51 @@ input:checked+.slider:before {
 /*button[type="submit"]:hover {
   background-color: #2a90e4;
 }*/
+#rangeFilterCountMin, #rangeFilterCountMax {
+  max-width: 100px;
+  justify-content: center;
+  float: none;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 248, 254);
+
+}
+
+@media (width<=600px) {
+  #muchomasbtn {
+    margin-top: 3.5rem;
+    width: 50%;
+  }
+  
+  #rangeFilterCountMin, #rangeFilterCountMax {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #contenedorLogin {
+    display: flex;
+    justify-self: center;
+    margin-top: 55%;
+  }
+  #formLogin {
+  }
+}
+
+@media (width>=600px) {
+  .max-width {
+    max-width: 500px;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 600px) {
+  .stars {
+    display: flex;
+    flex-direction:row;
+  }
+}
