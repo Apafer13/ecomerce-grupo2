@@ -83,7 +83,33 @@ function completarCarro() {
     cart.innerHTML += htmlContentToAppend;
 }
 
+(() => {
+    'use strict'
+    let forms = document.getElementsByClassName("needs-validation");
+  
+    Array.from(forms).forEach(form => {
 
+      form.addEventListener("submit", event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+        
+        if(form.checkValidity()) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Compra realizada',
+                icon: 'success',
+                showCancelButton: false,
+            })
+            .then(() => {
+                window.location.href = "cart.html";
+            });
+        }
+      }, false)
+    })
+  })()
 
 /*let shippingHtml = `
 

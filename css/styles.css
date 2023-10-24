@@ -540,7 +540,6 @@ input:checked+.slider:before {
 
 #envio label {
   display: block;
-  margin-bottom: 8px;
   font-weight: bold;
 }
 
@@ -553,18 +552,6 @@ input:checked+.slider:before {
   border-radius: 4px;
 }
 
-#envio button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#envio button:hover {
-  background-color: #0056b3;
-}
 
 #tableCart {
   width: 100%;
@@ -604,6 +591,10 @@ input:checked+.slider:before {
   align-items: center;
   background-color: rgb(248, 248, 254);
 
+}
+
+.envios {
+  text-align: left;
 }
 
 @media (width<=600px) {

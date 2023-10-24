@@ -80,25 +80,50 @@
 
           </tbody>
         </table>
+        <form class="needs-validation" novalidate>
         <div id="envio" class="text-center">
-          <label for="shippingType">Tipo de Envío:</label>
-          <select id="shippingType" name="shippingType">
-            <option value="premium">Premium 2 a 5 días (15%)</option>
-            <option value="express">Express 5 a 8 días (7%)</option>
-            <option value="standard">Standard 12 a 15 días (5%)</option>
-          </select>
+          <label class="envios" for="shippingType">Tipo de Envío:</label>
           <br>
-          <label for="street">Calle:</label>
-          <input type="text" id="street" name="street" required>
+          <div class="form-check">
+          <input class="form-check-input" type="radio" name="envio" required checked>
+          <label class="envios">Standard 12 a 15 días (15%)</label>
+          <input class="form-check-input" type="radio" name="envio" required>
+          <label class="envios">Express 5 a 8 días (7%)</label>
+          <input class="form-check-input" type="radio" name="envio" required>
+          <label class="envios">Premium 2 a 5 días (15%)</label>
+          </div>
           <br>
-          <label for="number">Número:</label>
-          <input type="text" id="number" name="number" required>
+          <label class="envios" for="shippingType">Dirección de Envío:</label>
           <br>
-          <label for="corner">Esquina:</label>
-          <input type="text" id="corner" name="corner">
+          <label for="street" class="envios form-label">Calle:</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" aria-describedby="inputGroupPrepend" id="street" name="street" required>
+            <div class="envios invalid-feedback">
+              Ingrese una calle
+            </div>
+          </div>
           <br>
-          <button id="confirmButton">Confirmar Envío</button>
+          <label for="number" class="envios form-label">Número:</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="number" name="number" aria-describedby="inputGroupPrepend" required>
+            <div class="envios invalid-feedback">
+              Ingrese un número
+            </div>
+          </div>
+          <br>
+          <label for="corner" class="envios form-label">Esquina:</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="corner" name="corner" aria-describedby="inputGroupPrepend" required>
+            <div class="envios invalid-feedback">
+              Ingrese una esquina
+            </div>
+          </div>
         </div>
+        <br>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="submit" id="compra">Finalizar compra</button>
+        </div>
+      </form>
       </div>
     </div>
   </main>
