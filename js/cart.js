@@ -8,27 +8,70 @@ document.addEventListener("DOMContentLoaded", ()=>{
         } else {
             console.error(result.data);
         }
+   
+
+    const selectPaymentButton = document.getElementById("select-payment-button");
+    const paymentSelection = document.getElementById("payment-selection");
+    const paymentModal = document.getElementById("payment-modal");
+    const closeModal = document.getElementById("close-modal");
+    const savePayment = document.getElementById("save-payment");
+    const paymentOptions = document.getElementsByName("payment-option");
+    const creditCardFields = document.getElementById("credit-card-fields");
+    const bankTransferFields = document.getElementById("bank-transfer-fields");
+
+
+//Muestra la ventana Modal cuando se hace click en "seleccionar"
+    selectPaymentButton.addEventListener("click", () => {
+        paymentModal.style.display = "block";
     });
+
+    // Para cerrar el modal haciendo click en "X"
+    closeModal.addEventListener("click", () => {
+        paymentModal.style.display = "none";
+    });
+
+// Guardar la forma de pago
+    savePayment.addEventListener("click", () => {
+        let selectedPayment = "No ha seleccionado";
+        paymentOptions.forEach((option) => {
+            if (option.checked) {
+                selectedPayment = option.value;
+            }
+        });
+        paymentSelection.textContent = selectedPayment;
+        paymentModal.style.display = "none";
+    });
+
+    paymentOptions.forEach((option) => {
+        option.addEventListener("change", () => {
+            if (option.value === "credit-card") {
+                creditCardFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = false;
+                });
+                bankTransferFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = true;
+                });
+            } else if (option.value === "bank-transfer") {
+                creditCardFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = true;
+                });
+                bankTransferFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = false;
+                });
+            }
+        });
+    });
+   
     
-    const shippingTypeSelect = document.getElementById("shippingType");
-    const streetInput = document.getElementById("street");
-    const numberInput = document.getElementById("number");
-    const cornerInput = document.getElementById("corner");
-    const confirmButton = document.getElementById("confirmButton");
-    
-    confirmButton.addEventListener("click", confirmShipping);
-    
+});
+
     function confirmShipping() {
         const selectedShippingType = shippingTypeSelect.value;
         const selectedStreet = streetInput.value;
         const selectedNumber = numberInput.value;
         const selectedCorner = cornerInput.value;
     
-        
     }
-    
-    })
-    
     
     function ShowCartData(data){
         let cart = document.getElementById('infoCart')
@@ -76,5 +119,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             <button id="confirmButton">Confirmar Envío</button>`;
     
             cart.innerHTML += shippingHtml;
-    
     }
+
+});

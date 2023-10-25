@@ -57,27 +57,59 @@
   <main>
     <div class="container">
       <div id="infoCart">
-
-        <label for="shippingType">Tipo de Envío:</label>
-        <select id="shippingType" name="shippingType">
-          <option value="premium">Premium 2 a 5 días (15%)</option>
-           <option value="express">Express 5 a 8 días (7%)</option>
-           <option value="standard">Standard 12 a 15 días (5%)</option>
-        </select>
-     
-        <label for="street">Calle:</label>
-        <input type="text" id="street" name="street" required>
-     
-        <label for="number">Número:</label>
-        <input type="text" id="number" name="number" required>
-     
-        <label for="corner">Esquina:</label>
-        <input type="text" id="corner" name="corner">
-     
-        <button id="confirmButton">Confirmar Envío</button>
-        
       </div>
-    </div>
+      
+<!-- Botón de "Seleccionar" para abrir la ventana modal-->
+<h4>Forma de Pago</h4> 
+<p id="payment-selection">No ha seleccionado <a id="select-payment-button" class="link">Seleccionar</a></p>
+
+
+     <!-- Modal para la forma de pago -->
+     <div id="payment-modal" class="modal">
+      <div class="modal-content">
+          <span class="close" id="close-modal">&times;</span>
+          <h2>Forma de pago</h2>
+          </div>
+
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="payment-option" value="credit-card" id="credit-card">
+            <label class="form-check-label" for="credit-card">Tarjeta de Crédito</label>
+            </div>
+
+            <div id="credit-card-fields">
+              <div class="form-group">
+                <label for="card-number">Número de tarjeta:</label>
+                <input type="text" id="card-number" name="card-number">
+              </div>
+              <div class="form-group">
+                <label for="security-code">Código de seguridad:</label>
+                <input type="text" id="security-code" name="security-code">
+              </div>
+              <div class="form-group">
+                <label for="expiration-date">Vencimiento (MM/AA):</label>
+                <input type="text" id="expiration-date" name="expiration-date">
+              </div>
+            </div>
+            
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="payment-option" value="bank-transfer" id="bank-transfer">
+                <label class="form-check-label" for="bank-transfer">Transferencia Bancaria</label>
+                </div>
+               
+                <div id="bank-transfer-fields">
+                  <div class="form-group">
+                    <label for="account-number">Número de cuenta:</label>
+                    <input type="text" id="account-number" name="account-number">
+                  </div>
+                </div>
+
+                <button id="save-payment" class="btn btn-primary">Guardar</button>
+              </div>
+          
+        
+          
+      </div>
+    
   </main>
   <footer class="text-muted">
     <div class="container">
