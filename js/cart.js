@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             console.error(result.data);
         }
    
-
+    const paymentTypeDisplay = document.getElementById("payment-type-display");
     const selectPaymentButton = document.getElementById("select-payment-button");
     const paymentSelection = document.getElementById("payment-selection");
     const paymentModal = document.getElementById("payment-modal");
@@ -33,14 +33,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
 // Guardar la forma de pago
     savePayment.addEventListener("click", () => {
         let selectedPayment = "No ha seleccionado";
-        paymentOptions.forEach((option) => {
+        
+
+      paymentOptions.forEach((option) => {
             if (option.checked) {
                 selectedPayment = option.value;
             }
-        });
-        paymentSelection.textContent = selectedPayment;
-        paymentModal.style.display = "none";
-    });
+     });
+    
+    paymentModal.style.display = "none";
+    
+ });
 
     paymentOptions.forEach((option) => {
         option.addEventListener("change", () => {

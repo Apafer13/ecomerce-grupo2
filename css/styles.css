@@ -567,9 +567,18 @@ button[type="submit"]:hover{
 
 
 #payment-modal {
-  background-color: #ffffffc2;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffffc2; 
   padding: 20px;
   border-radius: 10px;
+  z-index: 1000;
+  max-width: 50%;
+  max-height: 50vh;
+  overflow: auto;
 }
 
 #payment-modal h2 {
