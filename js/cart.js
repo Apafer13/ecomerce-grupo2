@@ -11,6 +11,65 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error(result.data);
             }
         });
+
+    const paymentTypeDisplay = document.getElementById("payment-type-display");    
+    const selectPaymentButton = document.getElementById("select-payment-button");
+    const paymentSelection = document.getElementById("payment-selection");
+    const paymentModal = document.getElementById("payment-modal");
+    const closeModal = document.getElementById("close-modal");
+    const savePayment = document.getElementById("save-payment");
+    const paymentOptions = document.getElementsByName("payment-option");
+    const creditCardFields = document.getElementById("credit-card-fields");
+    const bankTransferFields = document.getElementById("bank-transfer-fields");
+    let formModal = document.getElementById("formModal");
+    
+
+
+//Muestra la ventana Modal cuando se hace click en "seleccionar"
+    selectPaymentButton.addEventListener("click", () => {
+        paymentModal.style.display = "block";
+    });
+
+    // Para cerrar el modal haciendo click en "X"
+    closeModal.addEventListener("click", () => {
+        paymentModal.style.display = "none";
+    });
+
+// Guardar la forma de pago
+    savePayment.addEventListener("click", () => {
+        let selectedPayment = "";
+        
+        paymentOptions.forEach((option) => {
+            if (option.checked) {
+                selectedPayment = option.value;
+                paymentSelection.innerHTML = selectedPayment;
+                
+            } 
+        });
+        if (formModal.checkValidity()) {
+        paymentModal.style.display = "none";
+        }
+    });
+
+    paymentOptions.forEach((option) => {
+        option.addEventListener("change", () => {
+            if (option.value === "credit-card") {
+                creditCardFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = false;
+                });
+                bankTransferFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = true;
+                });
+            } else if (option.value === "bank-transfer") {
+                creditCardFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = true;
+                });
+                bankTransferFields.querySelectorAll("input, select").forEach((element) => {
+                    element.disabled = false;
+                });
+            }
+        });
+    });
 });
 
 /*const shippingTypeSelect = document.getElementById("shippingType");
@@ -83,7 +142,57 @@ function completarCarro() {
     cart.innerHTML += htmlContentToAppend;
 }
 
-
+(() => {
+    'use strict'
+    let formModal = document.getElementById("formModal");
+    let formCompra = document.getElementById("formCompra");
+    let divFormadePago = document.getElementById("pago");
+    const selectPaymentButton = document.getElementById("select-payment-button");
+  
+      formCompra.addEventListener("submit", event => {
+        divFormadePago.innerHTML = "";
+        formCompra.classList.add('was-validated');
+        if (!formModal.checkValidity()) {
+        event.preventDefault();
+        divFormadePago.classList.add('feedback-negativo');
+        divFormadePago.innerHTML = "Debe seleccionar una forma de pago";
+        selectPaymentButton.classList.add('feedback-negativo');
+        }
+        
+        
+        if (!formCompra.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        
+        if(formCompra.checkValidity() && formModal.checkValidity()) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Compra realizada',
+                icon: 'success',
+                showCancelButton: false,
+            })
+            .then(() => {
+                window.location.href = "cart.html";
+            });
+        }
+      }, false)
+      formModal.addEventListener("submit", event => {
+        if (!formModal.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          formModal.classList.add('was-validated');
+    if (formModal.checkValidity()) {
+      event.preventDefault();
+      divFormadePago.classList.remove('feedback-negativo');
+      divFormadePago.innerHTML = "";
+      selectPaymentButton.classList.remove('feedback-negativo');
+    }
+}, false);
+    
+  })()
 
 /*let shippingHtml = `
 
@@ -107,4 +216,3 @@ function completarCarro() {
 
 
 cart.innerHTML += shippingHtml;*/
-
