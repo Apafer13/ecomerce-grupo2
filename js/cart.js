@@ -108,7 +108,9 @@ function recalcular() {
         subTotal[i].textContent = subtotal;
     }
 }
-
+function primeraFila(){
+    document.getElementById('primerProducto').innerHTML = ""
+}
 
 function ShowCartData(data) {
     let htmlContentToAppend = "";
@@ -118,8 +120,9 @@ function ShowCartData(data) {
                     <td class="align-middle">${data.currency} ${data.unitCost}</td>
                     <td class="align-middle"><input type="number" value="${data.count}" class="w-25 text-center" min="1" id="cantidad" onchange="modificar(${data.unitCost})"></td>
                     <td class="align-middle"><b>${data.currency}&nbsp;</b><b id="subtotalProducto">${data.unitCost}</b></td>
+                    <td class="align-middle"><input type="button" onclick="primeraFila()" value="X" class="id"></td>
                     </tr>`;
-    cart.innerHTML = htmlContentToAppend;
+    document.getElementById('primerProducto').innerHTML = htmlContentToAppend;
 }
 
 
@@ -130,16 +133,17 @@ function completarCarro() {
     let carrito = JSON.parse(localStorage.getItem("Carrito"));
     let htmlContentToAppend = "";
 
-    for (let producto of carrito) {
-        htmlContentToAppend += `<tr>   
+    for (let [index, producto] of carrito.entries()) {
+        htmlContentToAppend += `<tr class="filas">   
         <td><img class="img-fluid" src="${producto.image}" alt=""></td>
         <td class="align-middle">${producto.name}</td>
         <td class="align-middle">${producto.currency} <span class="costo">${producto.unitCost}</span></td>
         <td class="align-middle"><input type="number" value="${producto.count}" class="w-25 text-center cantidad" min="1"  onchange="recalcular()"></td>
         <td class="align-middle"><b>${producto.currency}&nbsp;</b><b> <span class="subtotal">${producto.unitCost}</span></b></td>
+        <td class="align-middle"><input type="button" onclick="borrar(${index})" value="X"></td>
         </tr>`;
     }
-    cart.innerHTML += htmlContentToAppend;
+    cart.innerHTML = htmlContentToAppend;
 }
 
 (() => {
