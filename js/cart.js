@@ -169,6 +169,7 @@ function borrar(index) {
     carrito.splice(index, 1);
     localStorage.setItem("Carrito", JSON.stringify(carrito));
     completarCarro();
+    recalcular();
 }
 
 // Escucho el evento 'change' en el tipo de envío para actualizar los valores cuando cambie
