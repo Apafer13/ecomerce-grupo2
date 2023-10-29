@@ -125,7 +125,12 @@ function ShowCartData(data) {
     document.getElementById('primerProducto').innerHTML = htmlContentToAppend;
 }
 
-
+function borrar(index) {
+    let carrito = JSON.parse(localStorage.getItem("Carrito"));
+    carrito.splice(index, 1);
+    localStorage.setItem("Carrito", JSON.stringify(carrito));
+    completarCarro();
+}
 
 
 
