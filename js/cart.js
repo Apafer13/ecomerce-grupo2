@@ -171,7 +171,8 @@ function borrar(index) {
     completarCarro();
 }
 
-
+// Escucho el evento 'change' en el tipo de envío para actualizar los valores cuando cambie
+tipodeEnvio.addEventListener('change', recalcular);
 
 function completarCarro() {
     let carrito = JSON.parse(localStorage.getItem("Carrito"));
