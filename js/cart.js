@@ -182,9 +182,9 @@ function completarCarro() {
         htmlContentToAppend += `<tr class="filas">   
         <td><img class="img-fluid" src="${producto.image}" alt=""></td>
         <td class="align-middle">${producto.name}</td>
-        <td class="align-middle">${producto.currency} <span class="costo">${producto.unitCost}</span></td>
+        <td class="align-middle"><span class="moneda">${producto.currency}</span> <span class="costo">${producto.unitCost}</span></td>
         <td class="align-middle"><input type="number" value="${producto.count}" class="w-25 text-center cantidad" min="1"  onchange="recalcular()"></td>
-        <td class="align-middle"><b>${producto.currency}&nbsp;</b><b> <span class="subtotal">${producto.unitCost}</span></b></td>
+        <td class="align-middle"><b><span class="monedaSubTotal">${producto.currency}</span>&nbsp;</b><b> <span class="subtotal">${producto.unitCost}</span></b></td>
         <td class="align-middle"><input type="button" onclick="borrar(${index})" value="X"></td>
         </tr>`;
     }
