@@ -29,7 +29,8 @@ nav a {
 }
 
 .jumbotron {
-  height: 50vh;
+  width: 100vw;
+  height: 33vw;
   padding: 5em inherit;
   margin-bottom: 0;
   background-color: #0083c9;
@@ -39,6 +40,7 @@ nav a {
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
+
 }
 
 @media (min-width: 768px) {
@@ -265,7 +267,7 @@ a.custom-card:hover {
   font-size: 20px;
 }
 
-#username {
+#username{
   color: white;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -321,7 +323,7 @@ a.custom-card:hover {
 }
 
 #infoProducto h2 {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 #comment-form {
@@ -331,12 +333,10 @@ a.custom-card:hover {
 #contenedor {
   margin-top: 75px;
 }
-
 .presentation {
   display: flex;
   align-items: center;
 }
-
 .text {
   flex: 1;
   padding-right: 10px;
@@ -366,7 +366,6 @@ a.custom-card:hover {
 .divRel img {
   width: 70%;
 }
-
 /* Estilos para el modo oscuro */
 .dark-mode {
   background-color: #070605;
@@ -380,7 +379,6 @@ a.custom-card:hover {
 .dark-mode .navbar {
   background-color: #333;
 }
-
 body,
 .darkmodez,
 .jumbotron,
@@ -397,6 +395,11 @@ body.dark-mode .darkmodez {
 
 .img-thumbnail {
   border-color: #1a1a1a;
+color: #eeeeee;
+}
+
+.img-thumbnail {
+  border-color: #1a1a1a; 
 }
 
 body.dark-mode .jumbotron {
@@ -526,6 +529,7 @@ input:checked+.slider:before {
 }
 
 #envio {
+
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -588,3 +592,147 @@ input:checked+.slider:before {
 /*button[type="submit"]:hover {
   background-color: #2a90e4;
 }*/
+#rangeFilterCountMin, #rangeFilterCountMax {
+  max-width: 100px;
+  justify-content: center;
+  float: none;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 248, 254);
+
+}
+
+@media (width<=600px) {
+  #muchomasbtn {
+    margin-top: 3.5rem;
+    width: 50%;
+  }
+  
+  #rangeFilterCountMin, #rangeFilterCountMax {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #contenedorLogin {
+    display: flex;
+    justify-self: center;
+    margin-top: 55%;
+  }
+  #formLogin {
+  }
+}
+
+@media (width>=600px) {
+  .max-width {
+    max-width: 500px;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 600px) {
+  .stars {
+    display: flex;
+    flex-direction:row;
+  }
+}
+
+.envios, .form-check {
+  text-align: left;
+}
+
+#payment-modal h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+#credit-card,
+#bank-transfer {
+  margin-right: 10px;
+}
+
+  #payment-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    max-width: 50%; 
+    max-height: 95vh; 
+    overflow: auto; /
+}
+
+.modal-background {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+}
+
+#select-payment-button {
+  cursor: pointer;
+}
+
+#select-payment-button:hover + #payment-modal {
+  display: block;
+}
+
+#select-payment-button:hover + .modal-background {
+  display: block;
+}
+
+
+#save-payment {
+  background-color: #007bffcc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: none;
+}
+
+#save-payment:hover {
+  background-color: #0056b3;
+}
+
+#credit-card-fields,
+#bank-transfer-fields {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#credit-card-fields input,
+#bank-transfer-fields input {
+  width: 30%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#close-modal {
+  position: absolute;
+  top: 1px; 
+  right: 20px; 
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.feedback-negativo {
+  color: red;
+  text-align: left;
+  font-size: 13px;
+}
