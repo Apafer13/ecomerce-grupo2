@@ -31,17 +31,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+
+
+
 inputImagen.addEventListener("change", function () {
+    if (inputImagen.files && inputImagen.files[0]) {
+        const leer = new FileReader();
 
-    let selectedFile = inputImagen.files[0];
+        leer.onload = function(e) {
+            imagen.src = e.target.result;
 
-    if (selectedFile) {
-        let imagePath = URL.createObjectURL(selectedFile);
-        imagen.setAttribute("src", imagePath)
-        localStorage.setItem("perfil", JSON.stringify(imagePath))
+            const base64 = e.target.result
+            localStorage.setItem("perfil", base64);
+        };
+
+        leer.onerror = function(e) {
+            console.error("Error al leer el archivo:", e.target.error);
+        };
+
+        leer.readAsDataURL(inputImagen.files[0]);
     }
-
-})
+});
 
 form.addEventListener('submit', event => {
     if (!form.checkValidity()) {
@@ -50,8 +60,9 @@ form.addEventListener('submit', event => {
     }
 
     form.classList.add('was-validated')
-    let perfil = JSON.parse(localStorage.getItem("perfil"));
 
+
+    let perfil = localStorage.getItem("perfil");
     let datos = { nombre1: nombre.value, nombre2: segNombre.value, apellido: apellido.value, apellido2: segApellido.value, email: email.value, telefono: telefono.value, imagen: perfil }
     localStorage.setItem("datosUsuario", JSON.stringify(datos));
 
